@@ -3,6 +3,7 @@
 	"author": "Roman Posudnevskiy",
 	"description": "A freeCodeCamp learning project 'Managing Packages with NPM'",
 	"keywords": [ "freecodecamp", "NPM", "package" ],
+	"license": "MIT",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
