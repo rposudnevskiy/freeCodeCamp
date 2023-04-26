@@ -26,15 +26,25 @@ app.use((req, res, next) => {
 });
 
 // your first API endpoint... 
-app.get("/api/:datetime", function(req, res) {
+app.get("/api/:datetime?", function(req, res) {
     let date;
-    if (isNaN(req.params.datetime)) {
-      date =new Date(req.params.datetime);
+    if (!req.params.datetime) {
+      console.log("datetime param is empty");
+      date = new Date();
     } else {
-      date = new Date(parseInt(req.params.datetime));
+      if (isNaN(req.params.datetime)) {
+        date = new Date(req.params.datetime);
+      } else {
+        date = new Date(parseInt(req.params.datetime));
+      }
     }
-    res.json({ "unix": date.getTime(), "utc": date.toUTCString() }); 
-});
+
+    if (isNaN(date.valueOf())) {
+      res.json({ error : "Invalid Date" })
+    } else {
+      res.json({ "unix": date.getTime(), "utc": date.toUTCString() });
+    }
+  });
 
 //------------------
 
