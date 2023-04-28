@@ -11,8 +11,8 @@ const TIMEOUT = 10000;
 
 let isAValidUrl = (url) => {
   try {
-    new URL(url);
-    return true;
+    const newUrl = new URL(url);
+    return newUrl.protocol === 'http:' || newUrl.protocol === 'https:';
   } catch (err) {
     return false;
   }
