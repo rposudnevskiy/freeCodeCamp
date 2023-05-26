@@ -23,7 +23,6 @@ function ConvertHandler() {
     input = input.toLowerCase();
     const re = /^[0-9./]*(gal|l|mi|km|lbs|kg)$/;
     if (input.match(re)) {
-      console.log(input.match(re)[1]);
       return input.match(re)[1];
     } else {
       return null
