@@ -20,8 +20,10 @@ function ConvertHandler() {
   };
 
   this.getUnit = function(input) {
-    const re = /^[0-9./]*(gal|L|mi|km|lbs|kg)$/;
+    input = input.toLowerCase();
+    const re = /^[0-9./]*(gal|l|mi|km|lbs|kg)$/;
     if (input.match(re)) {
+      console.log(input.match(re)[1]);
       return input.match(re)[1];
     } else {
       return null
@@ -34,7 +36,7 @@ function ConvertHandler() {
       case 'gal':
         result = 'L';
         break;
-      case 'L':
+      case 'l':
         result = 'gal';
         break;
       case 'mi':
@@ -59,7 +61,7 @@ function ConvertHandler() {
       case 'gal':
         result = 'gallons';
         break;
-      case 'L':
+      case 'l':
         result = 'liters';
         break;
       case 'mi':
@@ -88,7 +90,7 @@ function ConvertHandler() {
       case 'gal':
         result = initNum * galToL;
         break;
-      case 'L':
+      case 'l':
         result = initNum / galToL;
         break;
       case 'mi':
