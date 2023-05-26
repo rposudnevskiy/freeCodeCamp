@@ -23,7 +23,11 @@ function ConvertHandler() {
     input = input.toLowerCase();
     const re = /^[0-9./]*(gal|l|mi|km|lbs|kg)$/;
     if (input.match(re)) {
-      return input.match(re)[1];
+      if (input.match(re)[1] === 'l') {
+        return input.match(re)[1].toUpperCase();
+      } else {
+        return input.match(re)[1];
+      }
     } else {
       return null
     }
@@ -35,7 +39,7 @@ function ConvertHandler() {
       case 'gal':
         result = 'L';
         break;
-      case 'l':
+      case 'L':
         result = 'gal';
         break;
       case 'mi':
@@ -60,7 +64,7 @@ function ConvertHandler() {
       case 'gal':
         result = 'gallons';
         break;
-      case 'l':
+      case 'L':
         result = 'liters';
         break;
       case 'mi':
@@ -89,7 +93,7 @@ function ConvertHandler() {
       case 'gal':
         result = initNum * galToL;
         break;
-      case 'l':
+      case 'L':
         result = initNum / galToL;
         break;
       case 'mi':

@@ -67,7 +67,7 @@ suite('Unit Tests', function(){
   });
   // #12 convertHandler should correctly convert gal to L
   test('convertHandler should correctly convert L to gal', function () {
-    assert.equal(convertHandler.convert('5.4', 'l'), 1.42653, 'L to gal is not converted correctly');
+    assert.equal(convertHandler.convert('5.4', 'L'), 1.42653, 'L to gal is not converted correctly');
   });
   // #13 convertHandler should correctly convert mi to km
   test('convertHandler should correctly convert mi to km', function () {
