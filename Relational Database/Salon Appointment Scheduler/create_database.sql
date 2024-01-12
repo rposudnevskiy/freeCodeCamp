@@ -17,7 +17,7 @@ CREATE TABLE services(
 
 CREATE TABLE appointments(
 	appointment_id SERIAL PRIMARY KEY, 
-	time VARCHAR(5) NOT NULL,
+	time VARCHAR(10) NOT NULL,
 	customer_id INT NOT NULL,
 	CONSTRAINT fk_customer_id
 		FOREIGN KEY(customer_id)  
